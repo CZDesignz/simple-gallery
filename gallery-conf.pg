@@ -1,0 +1,9 @@
+<?php
+
+### (c) 2009 CZDesignz.co.uk - Rob ###
+
+### General Settings ###
+
+$rootdir = "gallerypics/pics/";
+
+?>

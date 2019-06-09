@@ -1,0 +1,27 @@
+#start .htaccess code
+
+AddType application/x-httpd-php pg
+
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteBase /
+
+## Gallery ##
+
+RewriteRule ^gallery/([^/\.]+)-([^/\.]+).htm?$ index.php?show=pics&gal=$1&num=$2 [L]
+RewriteRule ^gallery/([^/\.]+).htm?$ index.php?show=pics&gal=$1 [L]
+RewriteRule ^pics/album/(.*)/(.*).jpg albview.php?gal=$1&h=135&w=135 [L]
+RewriteRule ^pics/thumb/(.*) imgview.php?img=$1&h=135&w=135 [L]
+RewriteRule ^pics/(.*) imgview.php?img=$1&h=500&w=800 [L]
+RewriteRule ^gallery/show/([^/\.]+)/(.*) index.php?show=img&img=$1/$2&gal=$1 [L]
+RewriteRule ^gallery/([^/\.]+)/$ index.php?show=pics&gal=$1 [L]
+RewriteRule ^gallery/([^/\.]+)/$ index.php?show=pics&gal=$1 [L]
+
+RewriteRule ^pic/([^/\.]+)/([^/\.]+)/([^/\.]+)_b.jpg imgcreate.php?c=$3&h=$1&w=$2&b=y [L]
+RewriteRule ^pic/([^/\.]+)/([^/\.]+)/([^/\.]+)_([^/\.]+)_b.jpg imgcreate.php?c=$3&h=$1&w=$2&o=$4&b=y [L]
+RewriteRule ^pic/([^/\.]+)/([^/\.]+)/([^/\.]+)_([^/\.]+).jpg imgcreate.php?c=$3&h=$1&w=$2&o=$4 [L]
+RewriteRule ^pic/([^/\.]+)_([^/\.]+)_b.jpg imgcreate.php?c=$1&o=$2&b=y [L]
+RewriteRule ^pic/([^/\.]+)_([^/\.]+).jpg imgcreate.php?c=$1&o=$2 [L]
+RewriteRule ^pic/([^/\.]+)_b.jpg imgcreate.php?c=$1&b=y [L]
+RewriteRule ^pic/([^/\.]+).jpg imgcreate.php?c=$1 [L]
