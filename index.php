@@ -20,11 +20,7 @@ session_start();
 
 $_GET['dir'] = str_replace("[and]", "&", $_GET['dir']); 
 
-#$dir = "/home/twilcox/public_html/".$_GET['dir']; 
-#$linkin = "http://mnmusic.co.uk/".$_GET['dir']; 
-
 $dir = "http://151.10.1.2/".$_GET['dir']; 
-#$dir = str_replace("/wp-content/plugins/satan/tst7.php","/",realpath(__FILE__)).$_GET['dir']; 
 
 // Stylesheet Settings // 
 
@@ -74,7 +70,7 @@ $conf->defset("dir", $dd);    # Put the root directory here
 
 
 
-/* ~~~~~~~~ Bobs quick written script ~~~~~~~~ */ 
+/* ~~~~~~~~ Simple Gallery Script ~~~~~~~~ */ 
 
      
     # Sort out sessions # 
